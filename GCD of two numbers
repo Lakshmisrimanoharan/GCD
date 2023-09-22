@@ -1,0 +1,40 @@
+G# GCD
+Get two integer A and B and find the GCD of A! and B!
+import java.util.*;
+public class Main
+{
+    public static long factorial(int n)
+    {
+        long Fact=1;
+        for(int i=1;i<=n;i++)
+        Fact=Fact*i; 
+        return Fact;
+    }
+    public static long gcd(long a,long b)
+    {
+        long Temp,GCD=0;
+        while(b != 0)  
+        {  
+            Temp = b;  
+            b = a % b;  
+            a = Temp; 
+        }  
+        GCD = a;
+        return GCD;
+    }
+    
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int A=sc.nextInt();
+		int B=sc.nextInt();
+		long fact_A=factorial(A);
+		long fact_B=factorial(B);
+		long gcdresult=gcd(fact_A,fact_B);
+		System.out.println("GCD is = "+gcdresult);
+		
+	}
+}
+Output:
+4 
+5
+GCD is = 24
